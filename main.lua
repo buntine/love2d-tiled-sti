@@ -1,4 +1,4 @@
-local sti = require("sti")
+local sti = require("lib/sti")
 
 function love.load()
 end
