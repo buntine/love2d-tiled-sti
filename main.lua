@@ -1,3 +1,5 @@
+local sti = require("sti")
+
 function love.load()
 end
 
