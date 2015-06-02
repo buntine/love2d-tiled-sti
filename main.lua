@@ -4,7 +4,7 @@ local anim8 = require("lib/anim8")
 function love.load()
     map = sti.new("assets/maps/level")
     heroSprites = love.graphics.newImage("assets/spritesheets/pimple.gif")
-    heroGrid = anim8.newGrid(65, 70, 590, 85)
+    heroGrid = anim8.newGrid(65, 70, heroSprites:getWidth(), heroSprites:getHeight())
 
     player = {
       spritesheet = heroSprites,
