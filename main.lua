@@ -1,4 +1,5 @@
 local sti = require("lib/sti")
+local anim8 = require("lib/anim8")
 
 function love.load()
     map = sti.new("assets/maps/level")
