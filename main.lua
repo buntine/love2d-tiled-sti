@@ -10,15 +10,15 @@ function love.load()
     player = {
       spritesheet = heroSprites,
       x = 60,
-      y = 379,
-      speed = 50,
+      y = 382,
+      speed = 80,
       animations = {
         still = anim8.newAnimation(stillGrid('1-2', 1), 1.0),
-        left = anim8.newAnimation(movementGrid('1-5', 2), 0.2),
-        right = anim8.newAnimation(movementGrid('1-5', 3), 0.2)
+        right = anim8.newAnimation(movementGrid('1-5', 2), 0.1),
+        left = anim8.newAnimation(movementGrid('1-5', 3), 0.1)
       },
     }
-    player.animation = player.animations.left
+    player.animation = player.animations.still
 
     love.graphics.setBackgroundColor(127, 117, 137)
 end
@@ -29,6 +29,16 @@ function love.draw()
 end
 
 function love.update(dt)
+    if love.keyboard.isDown("right") then
+        player.x = player.x + (player.speed * dt)
+        player.animation = player.animations.right
+    elseif love.keyboard.isDown("left") then
+        player.x = player.x - (player.speed * dt)
+        player.animation = player.animations.left
+    else
+        player.animation = player.animations.still
+    end
+
     map:update(dt)
     player.animation:update(dt)
 end
