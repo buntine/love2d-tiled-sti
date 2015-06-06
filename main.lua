@@ -11,11 +11,11 @@ function love.load()
       spritesheet = heroSprites,
       x = 60,
       y = 382,
-      speed = 80,
+      speed = 140,
       animations = {
         still = anim8.newAnimation(stillGrid('1-2', 1), 1.0),
-        right = anim8.newAnimation(movementGrid('1-5', 2), 0.1),
-        left = anim8.newAnimation(movementGrid('1-5', 3), 0.1)
+        right = anim8.newAnimation(movementGrid('1-5', 2), 0.08),
+        left = anim8.newAnimation(movementGrid('1-5', 3), 0.08)
       },
     }
     player.animation = player.animations.still
